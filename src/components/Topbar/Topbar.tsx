@@ -46,7 +46,7 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 	};
 
 	return (
-		<nav className="relative flex h-[50px] w-full shrink-0 items-center px-5 bg-dark-layer-1 text-dark-gray-7">
+		<nav className="relative flex h-[50px] w-full shrink-0 items-center px-5 bg-blue-900 text-white">
 			<div
 				className={`flex w-full items-center justify-between ${
 					!problemPage ? "max-w-[1200px] mx-auto" : ""
@@ -55,8 +55,8 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 				{/* Logo & Bug Journal (Side by Side) */}
 				<div className="flex items-center space-x-4">
 					{/* Home Logo */}
-					<Link href="/" className="h-[22px]">
-						<Image src="/logo-full.png" alt="Logo" height={100} width={100} />
+					<Link href="/">
+						<Image src="/logo-full.png" alt="Logo" height={40} width={40} />
 					</Link>
 
 					{/* Bug Journal Icon */}
@@ -65,7 +65,7 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 							src="/bug-journal.png" // Ensure this image exists in the public folder
 							alt="Journal"
 							height={40}
-							width={50}
+							width={40}
 							className="cursor-pointer hover:opacity-80 transition duration-300"
 						/>
 					</Link>
