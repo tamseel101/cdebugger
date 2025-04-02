@@ -1,7 +1,7 @@
 import assert from "assert";
 import { Problem } from "../types/problem";
 
-const starterCodeTwoSum = `function twoSum(nums,target){
+const starterCodeTwoSum = `int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
   // Write your code here
 };`;
 
@@ -31,6 +31,12 @@ async function handlerTwoSum(userSourceCode: string) {
 
     // Iterate over each test case
     for (const { nums, target, expected } of testCases) {
+        // add include statements
+        const includeStatements = `
+            #include <stdio.h>
+            #include <stdbool.h>
+            #include <stdlib.h>
+        `;
         // Create the main function to test the user's code
         const mainFunction = `
             #include <stdio.h>
@@ -57,7 +63,7 @@ async function handlerTwoSum(userSourceCode: string) {
         `;
 
         // Combine the user's code with the main function
-        const completeSourceCode = `${userSourceCode}\n${mainFunction}`;
+        const completeSourceCode = `${includeStatements}${userSourceCode}\n${mainFunction}`;
 
         // Prepare the payload for the Judge0 API
         const payload = {

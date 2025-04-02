@@ -1,7 +1,7 @@
 import assert from "assert";
 import { Problem } from "../types/problem";
 
-const starterCodeJumpGame = `function canJump(nums) {
+const starterCodeJumpGame = `bool canJump(int* nums, int numsSize) {
   // Write your code here
 };`;
 
@@ -31,6 +31,12 @@ async function handlerJumpGame(userSourceCode: string) {
 
     // Iterate over each test case
     for (const { nums, expected } of testCases) {
+        // add include statements
+        const includeStatements = `
+            #include <stdio.h>
+            #include <stdbool.h>
+            #include <stdlib.h>
+        `;
         // Create the main function to test the user's code
         const mainFunction = `
             #include <stdio.h>
@@ -48,8 +54,8 @@ async function handlerJumpGame(userSourceCode: string) {
         `;
 
         // Combine the user's code with the main function
-        const completeSourceCode = `${userSourceCode}\n${mainFunction}`;
-
+        const completeSourceCode = `${includeStatements}\n${userSourceCode}\n${mainFunction}`;
+        console.log(completeSourceCode);
         // Prepare the payload for the Judge0 API
         const payload = {
             source_code: completeSourceCode,
