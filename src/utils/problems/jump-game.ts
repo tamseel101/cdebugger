@@ -5,7 +5,7 @@ const starterCodeJumpGame = `function canJump(nums) {
   // Write your code here
 };`;
 
-const JUDGE0_URL = "http://127.0.0.1:2358"; // Local Judge0 instance
+const JUDGE0_URL = "https://cdebugger.utm.utoronto.ca/"; // Local Judge0 instance
 
 async function handlerJumpGame(userSourceCode: string) {
     // Define test cases
