@@ -79,7 +79,7 @@ const Signup: React.FC = () => {
 	useEffect(() => { if (error) alert(error.message); }, [error]);
 
 	return (
-		<form className="space-y-6 px-6 pb-4 bg-gray-200 text-gray-900 rounded-lg shadow-lg p-6">
+		<form onSubmit={handleRegister} className="space-y-6 px-6 pb-4 bg-gray-200 text-gray-900 rounded-lg shadow-lg p-6">
 			<h3 className="text-xl font-medium text-gray-900">Register</h3>
 			<div>
 				<label htmlFor="email" className="text-sm font-medium block mb-2 text-gray-700">Email</label>
